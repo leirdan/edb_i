@@ -35,17 +35,20 @@ Anotações e arquivos relacionados à 3a unidade da disciplina Estrutura de Dad
 
 ### ED Vetor : TAD Sequência
 **Def**: implementação do TAD Sequência onde os elementos estão armazenados sequencialmente na memória do computador. Para criar um Vetor, são necessários 3 elementos fundamentais: 
-    - `n`: quantidade de elementos no vetor; 
-    - `n_max`: comprimento do vetor; 
-    - `*v`: ponteiro para o início do vetor.
+
+* `n`: quantidade de elementos no vetor; 
+* `n_max`: comprimento do vetor; 
+* `*v`: ponteiro para o início do vetor.
+
 **Vantagens**: exige menos memória para armazenar os elementos, além de que, por estar disposta em um bloco contínuo, é mais rápido acessar um elemento arbitrário em qualquer posição.
 
 **Desvantagens**: é necessário um bloco contínuo na memória para armazenar todos os dados, o que nem sempre é possível; para acessar os elementos de um vetor utiliza-se *aritmética de ponteiros*, ou seja, é necessário que haja uma **homogeneidade de tipos** dos dados no vetor (precisam ocupar o mesmo espaço em memória para a aritmética funcionar).
 
 Veja a minha própria implementação em `src/vector.cpp`. 
-    - Acesso: método `get`, complexidade O(1);
-    - Inserção: método `insert`, complexidade O(n) e O(1) caso insira no final do Vetor;
-    - Remoção: método `remove`, complexidade O(n) e O(1) caso remova no final do Vetor;
+
+* Acesso: método `get`, complexidade O(1);
+* Inserção: método `insert`, complexidade O(n) e O(1) caso insira no final do Vetor;
+* Remoção: método `remove`, complexidade O(n) e O(1) caso remova no final do Vetor.
 
 #### Informações
 
