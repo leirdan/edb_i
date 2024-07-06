@@ -38,15 +38,23 @@ Anotações e arquivos relacionados à 3a unidade da disciplina Estrutura de Dad
     - `n`: quantidade de elementos no vetor; 
     - `n_max`: comprimento do vetor; 
     - `*v`: ponteiro para o início do vetor.
+**Vantagens**: exige menos memória para armazenar os elementos, além de que, por estar disposta em um bloco contínuo, é mais rápido acessar um elemento arbitrário em qualquer posição.
+
+**Desvantagens**: é necessário um bloco contínuo na memória para armazenar todos os dados, o que nem sempre é possível; para acessar os elementos de um vetor utiliza-se *aritmética de ponteiros*, ou seja, é necessário que haja uma **homogeneidade de tipos** dos dados no vetor (precisam ocupar o mesmo espaço em memória para a aritmética funcionar).
 
 Veja a minha própria implementação em `src/vector.cpp`. 
     - Acesso: método `get`, complexidade O(1);
     - Inserção: método `insert`, complexidade O(n) e O(1) caso insira no final do Vetor;
     - Remoção: método `remove`, complexidade O(n) e O(1) caso remova no final do Vetor;
 
-**Vantagens**: exige menos memória para armazenar os elementos, além de que, por estar disposta em um bloco contínuo, é mais rápido acessar um elemento arbitrário em qualquer posição.
+#### Informações
 
-**Desvantagens**: é necessário um bloco contínuo na memória para armazenar todos os dados, o que nem sempre é possível; para acessar os elementos de um vetor utiliza-se *aritmética de ponteiros*, ou seja, é necessário que haja uma **homogeneidade de tipos** dos dados no vetor (precisam ocupar o mesmo espaço em memória para a aritmética funcionar).
+|             | Inserção | Remoção | Acesso |
+| :---------: | :------: | :-----: | :----: |
+| Início      | O(n)     | O(n)    | O(1)   |
+| Fim         | O(1)     | O(1)    | O(1)   |
+| Arbitrário  | O(n)     | O(n)    | O(1)   |
+
 
 ### ED Lista Ligada : TAD Sequência 
 **Vantagens**: não necessita de um bloco contínuo na memória para armazenar os dados; não utiliza aritmética de ponteiros para acessar seus elementos (visto que estão espalhados ao longo da memória), logo, permite uma **heterogeneidade de tipos**.
