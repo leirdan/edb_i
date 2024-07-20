@@ -60,6 +60,10 @@ Veja a minha própria implementação em `src/vector.cpp`.
 
 
 ### ED Lista Ligada : TAD Sequência 
+**Def**: implementação do TAD Sequência onde cada elemento tem uma posição independente e guarda o endereço do próximo elemento.
+
 **Vantagens**: não necessita de um bloco contínuo na memória para armazenar os dados; não utiliza aritmética de ponteiros para acessar seus elementos (visto que estão espalhados ao longo da memória), logo, permite uma **heterogeneidade de tipos**.
 
 **Desvantagens**: exige maiores recursos computacionais, visto que cada elemento guarda o seu valor e um ponteiro para o próximo elemento que pode ser de qualquer tipo, além de que para acessar elementos que não sejam o primeiro é necessário percorrer todos os elementos até encontrar o desejado.
+
+
