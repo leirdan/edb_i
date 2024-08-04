@@ -44,11 +44,7 @@ Anotações e arquivos relacionados à 3a unidade da disciplina Estrutura de Dad
 
 **Desvantagens**: é necessário um bloco contínuo na memória para armazenar todos os dados, o que nem sempre é possível; para acessar os elementos de um vetor utiliza-se *aritmética de ponteiros*, ou seja, é necessário que haja uma **homogeneidade de tipos** dos dados no vetor (precisam ocupar o mesmo espaço em memória para a aritmética funcionar).
 
-Veja a minha própria implementação em `src/vector.cpp`. 
-
-* Acesso: método `get`, complexidade O(1);
-* Inserção: método `insert`, complexidade O(n) e O(1) caso insira no final do Vetor;
-* Remoção: método `remove`, complexidade O(n) e O(1) caso remova no final do Vetor.
+Veja a minha própria implementação em `src/vector.hpp`. 
 
 #### Informações
 
@@ -60,10 +56,18 @@ Veja a minha própria implementação em `src/vector.cpp`.
 
 
 ### ED Lista Ligada : TAD Sequência 
-**Def**: implementação do TAD Sequência onde cada elemento tem uma posição independente e guarda o endereço do próximo elemento.
+**Def**: implementação do TAD Sequência onde cada elemento tem uma posição independente e guarda o endereço do próximo elemento. 
 
-**Vantagens**: não necessita de um bloco contínuo na memória para armazenar os dados; não utiliza aritmética de ponteiros para acessar seus elementos (visto que estão espalhados ao longo da memória), logo, permite uma **heterogeneidade de tipos**.
+Veja minha própria implementação em `src/linked_list.hpp`, `src/iterator.hpp` e `src/node.hpp`.
+
+**Vantagens**: não necessita de um bloco contínuo na memória para armazenar os dados; não utiliza aritmética de ponteiros para acessar seus elementos (visto que estão espalhados ao longo da memória), logo, permite uma **heterogeneidade de tipos**; após encontrar o elemento na posição de inserção, a inserção acaba tendo uma complexidade constante e é menos custosa em comparação a do vetor, já que não precisa alterar a posição de nenhum elemento. 
 
 **Desvantagens**: exige maiores recursos computacionais, visto que cada elemento guarda o seu valor e um ponteiro para o próximo elemento que pode ser de qualquer tipo, além de que para acessar elementos que não sejam o primeiro é necessário percorrer todos os elementos até encontrar o desejado.
 
+#### Informações
 
+|             | Inserção | Remoção | Acesso |
+| :---------: | :------: | :-----: | :----: |
+| Início      | O(1)     | O(1)    | O(1)   |
+| Fim         | O(n)     | O(n)    | O(n)   |
+| Arbitrário  | O(n)     | O(n)    | O(n)   |

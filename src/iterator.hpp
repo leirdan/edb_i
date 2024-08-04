@@ -9,20 +9,31 @@ private:
     Node<T> *_current;
 
 public:
-    Iterator(Node<T> *node);
+    Iterator(Node<T> *node)
+    {
+        _current = node;
+    };
+    Node<T> *getCurrent();
+    bool has_next();
     void next();
 };
 
 template <typename T>
-void Iterator<T>::next()
+Node<T> *Iterator<T>::getCurrent()
 {
-    current = current->get_next();
+    return this->_current;
 }
 
 template <typename T>
-Iterator<T>::Iterator<T>(Node<T> *node)
+void Iterator<T>::next()
 {
-    current = node;
+    _current = _current->get_next();
+}
+
+template <typename T>
+bool Iterator<T>::has_next()
+{
+    return this->_current->get_next() != nullptr;
 }
 
 #endif

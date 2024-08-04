@@ -1,5 +1,6 @@
 #include "circular_vector.hpp"
 #include "vector.hpp"
+#include "linked_list.hpp"
 #include <iostream>
 
 int main()
@@ -70,9 +71,36 @@ int main()
     int length;
     std::cout << "Insert your list's length: ";
     std::cin >> length;
-    std::cout << "Insert your elements: ";
-    
 
+    ed::LinkedList<int> *linked_list = new ed::LinkedList<int>();
+
+    std::cout << "Insert your elements: ";
+    int aux;
+    for (int i = 0; i < length; i++)
+    {
+      std::cin >> aux;
+      linked_list->insert_at(aux, i);
+    }
+
+    std::cout << "These are your elements: ";
+    for (int i = 0; i < linked_list->size(); i++)
+    {
+      std::cout << linked_list->get(i)->get_data() << " ";
+    }
+
+    std::cout << "How many elements you wanna delete?";
+    std::cin >> aux;
+    std::cout << "Inser the elements index you wanna delete: ";
+    for (int i = 0; i < aux && i < linked_list->size(); i++)
+    {
+      std::cin >> aux;
+      linked_list->remove_at(aux);
+    }
+    std::cout << "Here's your list now: ";
+    for (int i = 0; i < linked_list->size(); i++)
+    {
+      std::cout << linked_list->get(i)->get_data() << " ";
+    }
   }
   }
 
